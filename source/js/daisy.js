@@ -1,4 +1,4 @@
-function loadHotPost(size, blogUrl) {
+function loadHotPost(size, blogUrl, api_authorization) {
     const data = {
         page: 0,
         size: size,
@@ -6,6 +6,9 @@ function loadHotPost(size, blogUrl) {
         time: new Date().getTime()
     }
     $.ajax({
+        headers: {
+            'API-Authorization': api_authorization
+        },
         url: blogUrl + "/api/content/posts",
         type: 'GET',
         data: data,

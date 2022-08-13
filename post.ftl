@@ -94,7 +94,7 @@
 <@footer/>
 <script type="application/javascript">
     $(function () {
-        loadHotPost(5, '${blog_url!}')
+        loadHotPost(5, '${blog_url!}', ${settings.api_authorization!})
         lightBox('.markdown-body img', '${post.title!}')
     })
 </script>

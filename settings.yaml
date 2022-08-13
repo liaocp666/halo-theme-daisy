@@ -23,6 +23,12 @@ site:
       type: text
       default: '日志'
       description: '/journals 页面显示的标题名字'
+    api_authorization:
+      name: api_authorization
+      label: Access key
+      type: text
+      default: ''
+      description: 接口认证
 sns:
   label: 社交资料
   items:

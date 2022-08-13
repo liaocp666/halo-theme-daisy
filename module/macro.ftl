@@ -199,7 +199,7 @@
         <div class="widget-hr border-b border-gray-300 w-full mb-4">
         </div>
         <div class="widget-content text-767676">
-            <ul id="hotPosts">
+            <ul id="newPosts">
                 <@postTag method="latest" top="5">
                     <#list posts as post>
                         <li class="py-1 w-full flex justify-start space-x-1">
