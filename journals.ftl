@@ -9,7 +9,7 @@
             <h1 class="text-4xl font-black subpixel-antialiased" id="fillTitle">${settings.journals_title}</h1>
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
-            <div class="page-content lg:w-[100%]">
+            <div class="page-content journals lg:w-[100%]">
                 <#list journals.content as journal>
                     <div class="page-item shadow-lg mb-12">
                         <div class="page-content bg-white p-8 text-767676 flex flex-col space-y-3">
@@ -20,7 +20,7 @@
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
                             <div class="page-summary">
-                                <p>${journal.sourceContent!}</p>
+                                <p>${journal.content!}</p>
                             </div>
                         </div>
                     </div>

@@ -41,7 +41,7 @@
         color: var(--color-fg-default);
     }
 
-    .markdown-body a {
+    .markdown-body a, .journals a {
         color: dodgerblue;
         word-wrap:break-word;
     }
