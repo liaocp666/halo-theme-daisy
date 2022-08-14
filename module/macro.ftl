@@ -1,6 +1,6 @@
 <#macro head title>
     <!doctype html>
-    <html>
+    <html lang="zh">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +55,7 @@
                 <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-full"
                        type="search"
                        name="keyword" placeholder="Search" required>
-                <button type="submit" class="" href="#">
+                <button type="submit">
                     <i class="ri-search-2-line"></i>
                 </button>
             </form>
