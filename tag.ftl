@@ -68,7 +68,7 @@
     </div>
 </div>
 <@footer/>
-<script type="application/javascript">
+<script>
     $(function () {
         loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
     })

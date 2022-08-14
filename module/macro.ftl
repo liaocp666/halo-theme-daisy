@@ -131,7 +131,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="${theme_base!}/source/js/daisy.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <script type="application/javascript">
+    <script>
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {
