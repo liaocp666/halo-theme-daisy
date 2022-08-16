@@ -258,15 +258,8 @@
     .markdown-body img {
         max-width: 100%;
         box-sizing: content-box;
+        margin: 0 auto;
         background-color: var(--color-canvas-default)
-    }
-
-    .markdown-body img[align=right] {
-        padding-left: 20px
-    }
-
-    .markdown-body img[align=left] {
-        padding-right: 20px
     }
 
     .markdown-body .emoji {
