@@ -27,7 +27,11 @@ daisy 是一款简洁、大气的 halo 主题。不仅仅适用于个人博客�
 
 ## 页面
 
-提供不带右部组件侧栏的独立页面展示，在 高级 - 自定义模板 选择 NoSidebar 。
+提供不带右部组件侧栏的独立页面展示，在 `高级` - `自定义模板` 选择 NoSidebar 。
+
+## 评论
+
+推荐：https://unpkg.com/halo-comment-normal@latest/dist/halo-comment.min.js
 
 ## 安装
 
