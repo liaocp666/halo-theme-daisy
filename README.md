@@ -31,7 +31,7 @@ daisy 是一款简洁、大气的 halo 主题。不仅仅适用于个人博客�
 
 ## 评论
 
-推荐：https://unpkg.com/halo-comment-normal@latest/dist/halo-comment.min.js
+(halo-comment-normal)[https://github.com/halo-dev/halo-comment-normal]
 
 ## 安装
 
