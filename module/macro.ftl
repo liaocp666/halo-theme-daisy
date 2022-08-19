@@ -100,7 +100,7 @@
 </#macro>
 
 <#macro navigation>
-    <div class="bg-white p-4 hover:shadow-lg mb-12">
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
                 <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
@@ -151,7 +151,7 @@
 </#macro>
 
 <#macro widgetRecentComments>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
         <div class="widget-title text-black font-bold mb-2">
             <p>最新评论</p>
         </div>
@@ -178,7 +178,7 @@
 </#macro>
 
 <#macro widgetHotPost>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
         <div class="widget-title text-black font-bold mb-2">
             <p>热门文章</p>
         </div>
@@ -193,7 +193,7 @@
 </#macro>
 
 <#macro widgetNewPost>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
         <div class="widget-title text-black font-bold mb-2">
             <p>最新文章</p>
         </div>
@@ -215,7 +215,7 @@
 </#macro>
 
 <#macro widgetLinks>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
         <div class="widget-title text-black font-bold mb-2">
             <p>友情连接</p>
         </div>

@@ -12,7 +12,7 @@
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
             <div class="page-content lg:w-[70%]">
                 <#list posts.content as post>
-                    <div class="page-item hover:shadow-lg mb-12">
+                    <div class="page-item hover:shadow-lg duration-300 mb-12">
                         <#if post.thumbnail?has_content>
                             <div class="page-thumbnail overflow-hidden">
                                 <a href="${post.fullPath!}" title="${post.title!}">
