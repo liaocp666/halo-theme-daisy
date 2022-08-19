@@ -11,7 +11,7 @@
         <div class="flex w-full mx-auto lg:page-mqx-width lg:px-[40px]">
             <div class="page-content journals lg:w-[100%] columns-1 lg:columns-3 gap-8">
                 <#list photos.content as photo>
-                    <div class="w-full page-item shadow-lg mb-12 bg-white float-left block overflow-hidden">
+                    <div class="w-full page-item hover:shadow-lg mb-12 bg-white float-left block overflow-hidden">
                         <div class="page-thumbnail overflow-hidden">
                             <a data-thumb="${photo.url!}" data-fancybox="journals" data-caption="${photo.name!}" href="${photo.url!}" title="${photo.name!}">
                                 <img alt="${photo.name!}" src="${photo.url!}"/>

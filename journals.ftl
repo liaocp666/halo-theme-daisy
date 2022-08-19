@@ -11,7 +11,7 @@
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
             <div class="page-content journals lg:w-[100%]">
                 <#list journals.content as journal>
-                    <div class="page-item shadow-lg mb-12">
+                    <div class="page-item hover:shadow-lg mb-12">
                         <div class="page-content bg-white p-8 text-767676 flex flex-col space-y-3">
                             <div class="page-meta text-[##767676] text-base flex justify-between">
                                 <div>
