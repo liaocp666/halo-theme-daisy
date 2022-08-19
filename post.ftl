@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="post-nav flex justify-between mb-12 space-x-4">
-                    <div class="prev-post w-1/2 text-left shadow-md bg-white p-5">
+                    <div class="prev-post w-1/2 text-left hover:shadow-lg bg-white p-5">
                         <#if prevPost??>
                             <a class="flex flex-col space-y-1 truncate" href="${prevPost.fullPath!}">
                                 <p class="text-sm text-767676">上一篇</p>
@@ -62,7 +62,7 @@
                             </a>
                         </#if>
                     </div>
-                    <div class="next-post w-1/2 text-right shadow-md bg-white p-5 space-y-1">
+                    <div class="next-post w-1/2 text-right hover:shadow-lg bg-white p-5 space-y-1">
                         <#if nextPost??>
                             <a class="flex flex-col space-y-1" href="${nextPost.fullPath!}">
                                 <p class="text-sm text-767676">下一篇</p>
