@@ -144,7 +144,7 @@
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {
-            if ((url + '/').indexOf($(this).attr('href')) > -1 && $(this).attr('href') != '/') {
+            if ((url + '/').indexOf($(this).attr('href').replace('.html', '')) > -1 && $(this).attr('href').replace('.html', '') != '/') {
                 $(this).addClass('text-black font-semibold tracking-wide');
                 urlstatus = true;
             } else {
