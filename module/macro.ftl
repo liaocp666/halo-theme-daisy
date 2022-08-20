@@ -106,7 +106,7 @@
 </#macro>
 
 <#macro navigation>
-    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12" data-instant>
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
                 <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
@@ -136,11 +136,13 @@
 
 <#macro footer>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="${theme_base!}/source/js/daisy.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.1.0/instantclick.min.js" type="application/javascript"></script>
+    <script src="${theme_base!}/source/js/daisy.js"></script>
     <script>
         hljs.highlightAll();
+        InstantClick.init(50)
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {

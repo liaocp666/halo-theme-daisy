@@ -1,7 +1,7 @@
 <#include "module/macro.ftl"/>
 <@head title="${tag.name!} - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]">
+<body class="bg-[#f9f9f9]" data-no-instant>
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[300px] w-full">
@@ -10,7 +10,7 @@
             <p class="text-767676 pl-4 lg:pl-0">${tag.description!}</p>
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
-            <div class="page-content lg:w-[73%] block overflow-hidden">
+            <div class="page-content lg:w-[73%] block overflow-hidden" data-instant>
                 <#list posts.content as post>
                     <div class="page-item hover:shadow-lg duration-300 mb-12">
                         <#if post.thumbnail?has_content>

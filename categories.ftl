@@ -1,7 +1,7 @@
 <#include "module/macro.ftl"/>
 <@head title="所有分类 - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]">
+<body class="bg-[#f9f9f9]" data-no-instant>
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[300px] w-full">
@@ -15,10 +15,5 @@
     </div>
 </div>
 <@footer/>
-<script>
-    $(function () {
-        loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
-    })
-</script>
 </body>
 </html>
