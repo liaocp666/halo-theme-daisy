@@ -27,6 +27,10 @@ function lightBox (selector, gallery) {
     $(selector).wrap(function(){
         return '<a data-fancybox="'+ gallery +'" href="' + this.src + '" title="' + this.alt + '" data-caption="'+ this.alt +'"></a>';
     })
+    Fancybox.bind("[data-fancybox]", {
+        infinite: false,
+        preload: 1
+    });
 }
 
 function toggleNav () {
@@ -41,11 +45,3 @@ function removeCommentCopyright() {
         comment.shadowRoot.append(style)
     }
 }
-
-$(function () {
-    Fancybox.bind("[data-fancybox]", {
-        infinite: false,
-        preload: 1
-    });
-    removeCommentCopyright()
-})
