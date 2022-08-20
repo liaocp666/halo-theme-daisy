@@ -38,7 +38,7 @@
 </#macro>
 
 <#macro header>
-    <header class="hidden fixed w-[400px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
+    <header class="hidden fixed w-[300px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
                 <img src="${blog_logo!}" alt="${blog_title!}">
