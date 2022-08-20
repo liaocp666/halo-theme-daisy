@@ -157,6 +157,12 @@
         if (!urlstatus) {
             $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
         }
+        InstantClick.on('change', function () {
+            Fancybox.bind("[data-fancybox]", {
+                infinite: false,
+                preload: 1
+            });
+        })
         InstantClick.init()
     </script>
     <@global.footer />
