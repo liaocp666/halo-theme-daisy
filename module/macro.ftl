@@ -142,7 +142,8 @@
     <script src="${theme_base!}/source/js/daisy.js"></script>
     <script>
         hljs.highlightAll();
-        InstantClick.init(50)
+        loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
+        lightBox('.markdown-body img', 'post')
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {
@@ -156,6 +157,7 @@
         if (!urlstatus) {
             $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
         }
+        InstantClick.init()
     </script>
     <@global.footer />
 </#macro>

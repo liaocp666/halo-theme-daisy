@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="post-nav flex justify-between mb-12 space-x-4" data-instant>
+                <div class="post-nav flex justify-between mb-12 space-x-4">
                     <div class="prev-post w-1/2 text-left hover:shadow-lg bg-white p-5">
                         <#if prevPost??>
                             <a class="flex flex-col space-y-1 truncate" href="${prevPost.fullPath!}">
@@ -92,11 +92,5 @@
     </div>
 </div>
 <@footer/>
-<script>
-    $(function () {
-        loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
-        lightBox('.markdown-body img', '${post.title!}')
-    })
-</script>
 </body>
 </html>
