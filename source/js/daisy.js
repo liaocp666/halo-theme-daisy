@@ -25,7 +25,7 @@ function loadHotPost(size, blogUrl, api_authorization) {
 
 function lightBox (selector, gallery) {
     $(selector).wrap(function(){
-        return '<a data-fancybox="'+ gallery +'" href="' + this.src + '" title="' + this.alt + '" data-caption="'+ this.alt +'"></a>';
+        return '<a data-no-instant data-fancybox="'+ gallery +'" href="' + this.src + '" title="' + this.alt + '" data-caption="'+ this.alt +'"></a>';
     })
     Fancybox.bind("[data-fancybox]", {
         infinite: false,
