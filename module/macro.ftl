@@ -191,7 +191,7 @@
 </#macro>
 
 <#macro widgetCatalog>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300" id="catalog-widget">
         <div class="widget-title text-black font-bold mb-2">
             <p>文章目录</p>
         </div>

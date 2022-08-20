@@ -47,7 +47,7 @@ function generateCatalog() {
     const url = window.location.pathname + "#"
     const content = $(".markdown-body :header")
     if (!content || content.length === 0) {
-        catalog.append('<li style="padding-left: '+ lastLeftPx +'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black">暂无目录</a></li>')
+        $('#catalog-widget').remove()
     }
     content.each(function(){
         const level = this.tagName.replace('H', '')
