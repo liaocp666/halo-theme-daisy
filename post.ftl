@@ -83,6 +83,7 @@
             </div>
             <div class="sidebar lg:w-[27%] block overflow-hidden">
                 <div class="flex flex-col space-y-12">
+                    <@widgetCatalog/>
                     <@widgetHotPost/>
                     <@widgetRecentComments/>
                     <@widgetNewPost/>

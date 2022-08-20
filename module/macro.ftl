@@ -144,6 +144,7 @@
         hljs.highlightAll();
         loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
         lightBox('.markdown-body img', 'post')
+        generateCatalog()
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {
@@ -185,6 +186,21 @@
                     </#list>
                 </ul>
             </@commentTag>
+        </div>
+    </div>
+</#macro>
+
+<#macro widgetCatalog>
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
+        <div class="widget-title text-black font-bold mb-2">
+            <p>文章目录</p>
+        </div>
+        <div class="widget-hr border-b border-gray-300 w-full mb-4">
+        </div>
+        <div class="widget-content text-767676">
+            <ul id="catalog">
+
+            </ul>
         </div>
     </div>
 </#macro>

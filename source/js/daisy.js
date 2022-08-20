@@ -37,6 +37,37 @@ function toggleNav () {
     $('#mobileNav').slideToggle(500)
 }
 
+function generateCatalog() {
+    const catalog = $('#catalog')
+    if (!catalog) {
+        return
+    }
+    let lastLevel = 0
+    let lastLeftPx = 0
+    const url = window.location.pathname + "#"
+    const content = $(".markdown-body :header")
+    if (!content || content.length === 0) {
+        catalog.append('<li style="padding-left: '+ lastLeftPx +'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black">暂无目录</a></li>')
+    }
+    content.each(function(){
+        const level = this.tagName.replace('H', '')
+        const title = $(this).text()
+        if (lastLevel === 0) {
+            lastLevel = level
+            lastLeftPx = 0
+        }
+        if (level > lastLevel) {
+            lastLeftPx = (level - lastLevel) * 15 + lastLeftPx
+        }
+        if (level < lastLevel) {
+            lastLeftPx = lastLeftPx - (lastLevel - level) * 15
+        }
+        lastLevel = level
+        $(this).attr('id', title)
+        catalog.append('<li style="padding-left: '+ lastLeftPx +'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black" title="'+ title +'" href="'+ url + title +'">' + title + '</a></li>')
+    });
+}
+
 function removeCommentCopyright() {
     var comment = document.querySelector('.halo-comment-part')
     if (comment) {
