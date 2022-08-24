@@ -7,7 +7,7 @@
     <div class="w-full h-screen lg:pl-[300px]">
         <div class="lg:max-w-[1000px] mx-auto h-screen relative">
             <div class="flex flex-col lg:flex-row justify-center content-center items-center h-screen lg:space-x-16 lg:mx-[20px]">
-                <div class="avatar mb-6 lg:mb-0 mx-auto">
+                <div class="avatar mb-6 lg:mb-0">
                     <div class="w-72 h-72 bg-cover bg-no-repeat bg-center animation-morph"
                          style="background-image: url('${user.avatar!}'); box-shadow: inset 0px 0px 0px 9px rgb(255 255 255 / 30%); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
                 </div>
