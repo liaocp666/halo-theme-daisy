@@ -27,32 +27,32 @@
                             </#if>
                             <#if settings.weibo?? && settings.weibo != ''>
                                 <li>
-                                    <a href="${settings.weibo}" title="github" target="_blank"><i class="ri-weibo-line text-2xl"></i></a>
+                                    <a href="${settings.weibo}" title="weibo" target="_blank"><i class="ri-weibo-line text-2xl"></i></a>
                                 </li>
                             </#if>
                             <#if settings.wechat?? && settings.wechat != ''>
                                 <li>
-                                    <a href="${settings.wechat}" title="github" target="_blank"><i class="ri-wechat-line text-2xl"></i></a>
+                                    <a href="${settings.wechat}" title="wechat" target="_blank"><i class="ri-wechat-line text-2xl"></i></a>
                                 </li>
                             </#if>
                             <#if settings.qq?? && settings.qq != ''>
                                 <li>
-                                    <a href="${settings.qq}" title="github" target="_blank"><i class="ri-qq-line text-2xl"></i></a>
+                                    <a href="${settings.qq}" title="qq" target="_blank"><i class="ri-qq-line text-2xl"></i></a>
                                 </li>
                             </#if>
                             <#if settings.bilibili?? && settings.bilibili != ''>
                                 <li>
-                                    <a href="${settings.bilibili}" title="github" target="_blank"><i class="ri-bilibili-line text-2xl"></i></a>
+                                    <a href="${settings.bilibili}" title="bilibili" target="_blank"><i class="ri-bilibili-line text-2xl"></i></a>
                                 </li>
                             </#if>
                             <#if settings.rss?? && settings.rss != ''>
                                 <li>
-                                    <a href="${settings.rss}" title="github" target="_blank"><i class="ri-rss-line text-2xl"></i></a>
+                                    <a href="${settings.rss}" title="rss" target="_blank"><i class="ri-rss-line text-2xl"></i></a>
                                 </li>
                             </#if>
                             <#if settings.email?? && settings.email != ''>
                                 <li>
-                                    <a href="${settings.email}" title="github" target="_blank"><i class="ri-mail-line text-2xl"></i></a>
+                                    <a href="${settings.email}" title="email" target="_blank"><i class="ri-mail-line text-2xl"></i></a>
                                 </li>
                             </#if>
                         </ul>
