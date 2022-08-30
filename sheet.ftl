@@ -27,7 +27,7 @@
                         </div>
                         <div class="border-b border-gray-300 w-full"></div>
                         <div class="page-summary markdown-body pb-2" id="post-content">
-                            ${post.content!}
+                            ${post.formatContent!}
                         </div>
                     </div>
                 </div>
