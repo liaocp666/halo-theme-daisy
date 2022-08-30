@@ -140,6 +140,7 @@
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.1.0/instantclick.min.js" type="application/javascript"></script>
     <script src="${theme_base!}/source/js/daisy.js"></script>
+    <@global.footer />
     <script>
         hljs.highlightAll();
         loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
@@ -158,9 +159,13 @@
         if (!urlstatus) {
             $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
         }
+        InstantClick.on('change', function () {
+            if (typeof _hmt !== 'undefined') {
+                _hmt.push(['_trackPageview', location.pathname + location.search]);
+            }
+        });
         InstantClick.init()
     </script>
-    <@global.footer />
 </#macro>
 
 <#macro widgetRecentComments>
