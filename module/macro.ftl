@@ -159,7 +159,10 @@
         if (!urlstatus) {
             $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
         }
-        InstantClick.on('change', function () {
+        InstantClick.on('change', function (isInitialLoad) {
+            if (isInitialLoad) {
+                return
+            }
             if (typeof _hmt !== 'undefined') {
                 _hmt.push(['_trackPageview', location.pathname + location.search]);
             }
