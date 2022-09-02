@@ -73,3 +73,16 @@ theme:
           label: 开
         - value: close
           label: 关
+    font:
+      name: font
+      label: 字体
+      type: select
+      data-type: 'string'
+      default: 'oppo-sans'
+      options:
+        - value: 'oppo-sans'
+          label: 'OPPO Sans'
+        - value: 'Mi-Sans'
+          label: 'Mi Sans'
+        - value: 'system'
+          label: '系统字体'

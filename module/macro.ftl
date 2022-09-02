@@ -28,6 +28,44 @@
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"></noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
         <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/github.min.css" type="text/css" rel="stylesheet" />
+        <#if settings.font == 'oppo-sans'>
+            <style>
+                @font-face {
+                    font-family: "OPPOSans-Ver2-Regular";
+                    src: url(https://code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.woff2) format("woff2"),
+                    url(https://code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.woff) format("woff"),
+                    url(https://code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.ttf) format("truetype"),
+                    url(https://code.oppo.com/content/dam/oppo/common/fonts/font2/new-font/OPPOSansOS2-5000-Regular.eot) format("embedded-opentype");
+                    font-weight: 400;
+                    font-style: normal;
+                    font-display: swap;
+                }
+
+                html {
+                    font-family: "OPPOSans-Ver2-Regular", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                }
+            </style>
+        </#if>
+        <#if settings.font == 'Mi-Sans'>
+        <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:200,300,400,450,500,600,650,700:Chinese_Simplify,Latin&amp;display=swap" as="style">
+        <style>
+            html {
+                font-family: MiSans, serif, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+        </style>
+        </#if>
+        <#if settings.font == 'system'>
+            <style>
+                @font-face {
+                    font-family: Emoji;
+                    src: local("Apple Color Emojiji"), local("Segoe UI Emoji"), local("Segoe UI Symbol"), local("Noto Color Emoji");
+                    unicode-range: U+1F000-1F644, U+203C-3299;
+                }
+                html {
+                    font-family: system-ui, —apple-system, Segoe UI, Rototo, Emoji, Helvetica, Arial, sans-serif;
+                }
+            </style>
+        </#if>
         <style>
             .hljs {
                 background: #f6f8fa;
