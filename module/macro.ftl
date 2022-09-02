@@ -38,7 +38,7 @@
 </#macro>
 
 <#macro header>
-    <header data-no-instant class="hidden fixed w-[300px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
+    <header class="hidden fixed w-[300px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
                 <img src="${blog_logo!}" alt="${blog_title!}">
@@ -50,8 +50,7 @@
                     <#list menus?sort_by('priority') as menu>
                         <li>
                             <a class="hover:text-black block w-full hover:tracking-wider duration-300"
-                               href="${menu.url!}"
-                               target="${menu.target!}">${menu.name!} </a>
+                               href="${menu.url!}">${menu.name!} </a>
                         </li>
                     </#list>
                 </@menuTag>
@@ -76,7 +75,7 @@
             </p>
         </div>
     </header>
-    <header data-no-instant class="lg:hidden bg-white sticky top-0">
+    <header class="lg:hidden bg-white sticky top-0">
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
