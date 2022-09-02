@@ -1,5 +1,5 @@
 site:
-  label: 网站设置
+  label: 标题设置
   items:
     sub_title:
       name: 副标题
@@ -60,3 +60,16 @@ sns:
       name: rss
       label: rss
       type: rss
+theme:
+  label: 外观设置
+  items:
+    init_click:
+      name: init_click
+      label: 局部刷新
+      type: radio
+      default: open
+      options:
+        - value: open
+          label: 开
+        - value: close
+          label: 关

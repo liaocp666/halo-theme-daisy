@@ -1,7 +1,7 @@
 <#include "module/macro.ftl"/>
 <@head title="友情链接 - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]" data-no-instant>
+<body class="bg-[#f9f9f9]">
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[300px] w-full">

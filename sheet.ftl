@@ -1,7 +1,7 @@
 <#include "module/macro.ftl"/>
 <@head title="${sheet.title!} - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]" data-no-instant>
+<body class="bg-[#f9f9f9]">
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[300px] w-full">
@@ -9,7 +9,7 @@
             <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0" id="fillTitle">${sheet.title!}</h1>
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
-            <div class="page-content lg:w-[73%] block overflow-hidden" data-instant>
+            <div class="page-content lg:w-[73%] block overflow-hidden">
                 <div class="page-item hover:shadow-lg duration-300 mb-12">
                     <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
                         <div class="page-meta text-[##767676] text-base flex justify-between">

@@ -38,7 +38,7 @@
 </#macro>
 
 <#macro header>
-    <header class="hidden fixed w-[300px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
+    <header data-no-instant class="hidden fixed w-[300px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
                 <img src="${blog_logo!}" alt="${blog_title!}">
@@ -76,7 +76,7 @@
             </p>
         </div>
     </header>
-    <header class="lg:hidden bg-white sticky top-0">
+    <header data-no-instant class="lg:hidden bg-white sticky top-0">
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
@@ -106,7 +106,7 @@
 </#macro>
 
 <#macro navigation>
-    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12" data-instant>
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
                 <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
@@ -138,7 +138,6 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
-    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.1.0/instantclick.min.js" type="application/javascript"></script>
     <script src="${theme_base!}/source/js/daisy.js"></script>
     <@global.footer />
     <script>
@@ -159,6 +158,10 @@
         if (!urlstatus) {
             $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
         }
+    </script>
+    <#if settings.init_click == 'open'>
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantclick/3.1.0/instantclick.min.js" type="application/javascript" data-no-instant></script>
+    <script>
         InstantClick.on('change', function (isInitialLoad) {
             if (isInitialLoad) {
                 return
@@ -169,6 +172,7 @@
         });
         InstantClick.init()
     </script>
+    </#if>
 </#macro>
 
 <#macro widgetRecentComments>
