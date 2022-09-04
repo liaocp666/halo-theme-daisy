@@ -5,10 +5,15 @@
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[300px] w-full">
-        <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px] flex flex-col space-y-3">
+        <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px]">
             <@categoryTag method="list">
                 <#list categories as category>
-                    <a href="${category.fullPath!}" class="inline-block px-6 py-2.5 bg-gray-200 text-gray-700 leading-tight uppercase rounded hover:shadow-lg hover:bg-gray-300 hover:hover:shadow-lg duration-300 focus:bg-gray-300 focus:hover:shadow-lg duration-300 focus:outline-none focus:ring-0 active:bg-gray-400 active:hover:shadow-lg duration-300 transition duration-150 ease-in-out">${category.name!}（${category.postCount!}）</a>
+                    <div class="inline-flex relative w-fit m-3">
+                        <div class="absolute inline-block top-0 right-0 bottom-auto left-auto translate-x-2/4 -translate-y-1/2 rotate-0 skew-x-0 skew-y-0 scale-x-100 scale-y-100 py-1 px-2.5 text-xs leading-none text-center whitespace-nowrap align-baseline font-bold bg-[dodgerblue] text-white rounded-full z-10">
+                            ${category.postCount!}
+                        </div>
+                        <a href="${category.fullPath}" title="${category.name!}" target="_blank" class="inline-block px-7 py-3 bg-gray-200 text-gray-700 font-medium text-sm leading-snug rounded hover:shadow-lg duration-300 transition">${category.name!}</a>
+                    </div>
                 </#list>
             </@categoryTag>
         </div>
