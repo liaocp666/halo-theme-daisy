@@ -4,7 +4,7 @@
 <body class="bg-[#f9f9f9]" data-no-instant>
 <div class="flex flex-col lg:flex-row">
     <@header/>
-    <div class="flex flex-col lg:pl-[300px] w-full">
+    <div class="flex flex-col lg:pl-[330px] w-full">
         <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px] flex flex-col space-y-3">
             <h1 class="text-4xl font-black subpixel-antialiased" id="fillTitle">${settings.photos_title}</h1>
         </div>

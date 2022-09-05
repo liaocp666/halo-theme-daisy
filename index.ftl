@@ -4,7 +4,7 @@
 <body class="bg-[#f9f9f9]">
 <div class="flex flex-col lg:flex-row">
     <@header/>
-    <div class="w-full h-screen lg:pl-[300px] px-[40px] lg:px-0 mt-[-60px] lg:mt-0">
+    <div class="w-full h-screen lg:pl-[330px] px-[40px] lg:px-0 mt-[-60px] lg:mt-0">
         <div class="lg:max-w-[1000px] mx-auto h-screen relative">
             <div class="flex flex-col lg:flex-row justify-center content-center items-center h-screen lg:space-x-16 lg:mx-[20px]">
                 <div class="avatar mb-6 lg:mb-0">

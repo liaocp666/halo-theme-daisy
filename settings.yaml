@@ -59,7 +59,7 @@ sns:
     rss:
       name: rss
       label: rss
-      type: rss
+      type: text
 theme:
   label: 外观设置
   items:
@@ -86,3 +86,15 @@ theme:
           label: 'Mi Sans'
         - value: 'system'
           label: '系统字体'
+    icp_beian:
+      name: icp_beian
+      label: ICP 备案号
+      type: text
+    ga_beian_content:
+      name: ga_beian_content
+      label: 公安备案内容
+      type: text
+    ga_beian_code:
+      name: ga_beian_code
+      label: 公安备案编号
+      type: text
