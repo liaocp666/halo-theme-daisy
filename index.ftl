@@ -4,59 +4,68 @@
 <body class="bg-[#f9f9f9]">
 <div class="flex flex-col lg:flex-row">
     <@header/>
-    <div class="w-full h-screen lg:pl-[330px] px-[40px] lg:px-0 mt-[-60px] lg:mt-0">
-        <div class="lg:max-w-[1000px] mx-auto h-screen relative">
-            <div class="flex flex-col lg:flex-row justify-center content-center items-center h-screen lg:space-x-16 lg:mx-[20px]">
-                <div class="avatar mb-6 lg:mb-0">
-                    <div class="w-72 h-72 bg-cover bg-no-repeat bg-center animation-morph"
-                         style="background-image: url('${user.avatar!}'); box-shadow: inset 0px 0px 0px 9px rgb(255 255 255 / 30%); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
-                </div>
-                <div class="resume space-y-6">
-                    <div class="name text-center lg:text-left">
-                        <h1 class="text-6xl subpixel-antialiased font-black font-sans">${user.nickname!}</h1>
+    <div class="flex flex-col lg:pl-[330px] w-full">
+        <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px]">
+            <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0"
+                id="fillTitle">${blog_title!}</h1>
+        </div>
+        <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
+            <div class="page-content lg:w-[73%] block overflow-hidden">
+                <#list posts.content as post>
+                    <div class="page-item hover:shadow-lg duration-300 mb-12">
+                        <#if post.thumbnail?has_content>
+                            <div class="page-thumbnail overflow-hidden">
+                                <a href="${post.fullPath!}" title="${post.title!}">
+                                    <img class="ease duration-300 w-full max-h-[400px] hover:scale-110"
+                                         src="${post.thumbnail!}" alt="${post.title!}">
+                                </a>
+                            </div>
+                        </#if>
+                        <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
+                            <div class="page-meta text-[##767676] text-base flex justify-between">
+                                <div>
+                                   <#if post.topped>
+                                       <i class="ri-pushpin-2-line" style="color:#ff7242"></i>
+                                       <span class="mr-1"></span>
+                                    </#if>
+                                    <#list post.categories as categorie>
+                                        <span class="mr-1">
+                                    <a href="${categorie.fullPath}">${categorie.name}</a>
+                                </span>
+                                        <span class="mr-1">
+                                    /
+                                </span>
+                                    </#list>
+                                    <span>
+                                    ${post.createTime?string("yyyy-MM-dd")}
+                                </span>
+                                </div>
+                                <div>
+                                    <a class="flex space-x-2 block" href="${post.fullPath!}#comment" title="评论一下">
+                                        <i class="ri-chat-2-line"></i>
+                                        <span>${post.commentCount!}</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="border-b border-gray-300 w-full"></div>
+                            <div class="title text-black">
+                                <a href="${post.fullPath!}" title="${post.title!}">
+                                    <h2 class="text-2xl font-semibold">${post.title!}</h2>
+                                </a>
+                            </div>
+                            <div class="page-summary">
+                                <p>${post.summary!}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info text-center lg:text-left">
-                        <p class="text-767676">${user.description!}</p>
-                    </div>
-                    <div class="social hidden lg:block">
-                        <ul class="flex space-x-4">
-                            <#if settings.github?? && settings.github != ''>
-                                <li>
-                                    <a href="${settings.github}" title="github" target="_blank"><i class="ri-github-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.weibo?? && settings.weibo != ''>
-                                <li>
-                                    <a href="${settings.weibo}" title="weibo" target="_blank"><i class="ri-weibo-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.wechat?? && settings.wechat != ''>
-                                <li>
-                                    <a href="${settings.wechat}" title="wechat" target="_blank"><i class="ri-wechat-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.qq?? && settings.qq != ''>
-                                <li>
-                                    <a href="${settings.qq}" title="qq" target="_blank"><i class="ri-qq-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.bilibili?? && settings.bilibili != ''>
-                                <li>
-                                    <a href="${settings.bilibili}" title="bilibili" target="_blank"><i class="ri-bilibili-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.rss?? && settings.rss != ''>
-                                <li>
-                                    <a href="${settings.rss}" title="rss" target="_blank"><i class="ri-rss-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                            <#if settings.email?? && settings.email != ''>
-                                <li>
-                                    <a href="${settings.email}" title="email" target="_blank"><i class="ri-mail-line text-2xl"></i></a>
-                                </li>
-                            </#if>
-                        </ul>
-                    </div>
+                </#list>
+                <@navigation/>
+            </div>
+            <div class="sidebar lg:w-[27%] block overflow-hidden mb-12">
+                <div class="flex flex-col space-y-12">
+                    <@widgetHotPost/>
+                    <@widgetRecentComments/>
+                    <@widgetLinks/>
                 </div>
             </div>
         </div>

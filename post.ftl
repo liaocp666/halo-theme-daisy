@@ -14,6 +14,11 @@
                     <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
                         <div class="page-meta text-[##767676] text-base flex justify-between">
                             <div class="">
+                                <span class="mr-1 widget-title text-black font-bold mb-2">
+                                    <a href="${blog_url!}/admin/index.html#/posts/edit?postId=${post.id!}" 
+target="_parent">编辑</a>
+                                </span>
+                                
                                 <#list post.categories as categorie>
                                     <span class="mr-1">
                                     <a href="${categorie.fullPath}">${categorie.name}</a>
@@ -25,8 +30,15 @@
                                 <span>
                                     ${post.createTime?string("yyyy-MM-dd")}
                                 </span>
+                                   <span class="mr-1">/ </span>
+                                <span>
+                                    ${post.updateTime?string("yyyy-MM-dd")}
+                                </span>
+                               
                             </div>
+
                             <div>
+                                 
                                 <a class="flex space-x-2 block" href="#comment" title="评论一下">
                                     <i class="ri-chat-2-line"></i>
                                     <span>${post.commentCount!}</span>

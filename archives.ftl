@@ -11,51 +11,38 @@
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
             <div class="page-content lg:w-[73%] block overflow-hidden">
-                <#list posts.content as post>
+              <@postTag method="archiveYear">
+                 <#list archives as archive>
                     <div class="page-item hover:shadow-lg duration-300 mb-12">
-                        <#if post.thumbnail?has_content>
-                            <div class="page-thumbnail overflow-hidden">
-                                <a href="${post.fullPath!}" title="${post.title!}">
-                                    <img class="ease duration-300 w-full max-h-[400px] hover:scale-110"
-                                         src="${post.thumbnail!}" alt="${post.title!}">
-                                </a>
-                            </div>
-                        </#if>
+                        
                         <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
                             <div class="page-meta text-[##767676] text-base flex justify-between">
-                                <div>
-                                    <#list post.categories as categorie>
-                                        <span class="mr-1">
-                                    <a href="${categorie.fullPath}">${categorie.name}</a>
-                                </span>
-                                        <span class="mr-1">
-                                    /
-                                </span>
-                                    </#list>
-                                    <span>
-                                    ${post.createTime?string("yyyy-MM-dd")}
-                                </span>
-                                </div>
-                                <div>
-                                    <a class="flex space-x-2 block" href="${post.fullPath!}#comment" title="评论一下">
-                                        <i class="ri-chat-2-line"></i>
-                                        <span>${post.commentCount!}</span>
-                                    </a>
-                                </div>
+                              <div class="title text-black">
+                                  <span>
+                                    <h2 class="text-2xl font-semibold">${archive.year?c}</h2>
+                                  </span>
+                            </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
-                            <div class="title text-black">
-                                <a href="${post.fullPath!}" title="${post.title!}">
-                                    <h2 class="text-2xl font-semibold">${post.title!}</h2>
-                                </a>
-                            </div>
-                            <div class="page-summary">
-                                <p>${post.summary!}</p>
-                            </div>
+                            <ul class="listing">
+                                <#list archive.posts as post>
+                                    <li class="py-1 w-full flex justify-start space-x-1">
+                                       <div class="truncate block">
+                                         <i class="ri-arrow-right-s-fill"></i>
+                                         <span >${post.createTime?string["yyyy年MM月dd日"]!}</span>
+                                         <span style="margin-right:.5rem">   </span>
+                                         <a class="hover:text-black" href="${post.fullPath!}" title="${post.title}">${post.title}</a>
+                                       </div>
+                                    </li>
+                                
+                            </#list>
+                            </ul>
+          
                         </div>
                     </div>
                 </#list>
-                <@navigation/>
+              </@postTag>
+
             </div>
             <div class="sidebar lg:w-[27%] block overflow-hidden mb-12">
                 <div class="flex flex-col space-y-12">

@@ -79,7 +79,7 @@
     <header class="hidden fixed w-[330px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
-                <img src="${blog_logo!}" alt="${blog_title!}">
+                <img class="logo_img" src="${blog_logo!}" alt="${blog_title!}">
             </a>
         </div>
         <div class="nav">
@@ -106,11 +106,11 @@
         </div>
         <div class="copyright text-767676">
             <p>
-                © ${.now?string("yyyy")} <a class="text-black" href="${blog_url!}">${blog_title!}</a>
+                © 2019-${.now?string("yyyy")} <a class="text-black" href="${blog_url!}">${user.nickname!}</a>
             </p>
             <p>
-                Powered by <a href="https://halo.run/" target="_blank" class="text-black">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black">Daisy</a>
-            </p>
+<!--                 Powered by <a href="https://halo.run/" target="_blank" class="text-black">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black">Daisy</a>
+ -->            </p>
         </div>
         <#if settings.icp_beian?? || settings.ga_beian_content??>
             <div class="beian text-xs text-767676 space-y-1 absolute bottom-0 select-none">
@@ -164,13 +164,54 @@
                                target="${menu.target!}">${menu.name!} </a>
                         </li>
                     </#list>
+                      <li>
+                        <div class="copyright text-767676" style="text-align:center">
+            <p>
+                © 2019-${.now?string("yyyy")} <a class="text-black" href="${blog_url!}">${user.nickname!}</a>
+            </p>
+            <p>
+<!--                 Powered by <a href="https://halo.run/" target="_blank" class="text-black">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black">Daisy</a>
+ -->            </p>
+        </div>
+                      </li>
                 </@menuTag>
             </ul>
         </div>
+                      
+        
     </header>
 </#macro>
 
 <#macro navigation>
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+        <nav aria-label="Page navigation">
+            <ul class="flex justify-between list-style-none space-x-3">
+                <@paginationTag method="index" page="${posts.number}" total="${posts.totalPages}" display="3">
+                    <li class="page-item">
+                        <#if pagination.hasPrev>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.prevPageFullPath!}">上一页</a>
+                        </#if>
+                    </li>
+                    <li>
+                                    <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                                        ${posts.number + 1} / ${posts.totalPages}
+                                    </span>
+                    </li>
+
+                    <li class="page-item">
+                        <#if pagination.hasNext>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.nextPageFullPath!}">下一页</a>
+                        </#if>
+                    </li>
+                </@paginationTag>
+            </ul>
+        </nav>
+    </div>
+</#macro>
+
+<#macro archivesnavigation>
     <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
@@ -199,6 +240,93 @@
     </div>
 </#macro>
 
+<#macro searchnavigation>
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+        <nav aria-label="Page navigation">
+            <ul class="flex justify-between list-style-none space-x-3">
+                <@paginationTag method="search" page="${posts.number}" total="${posts.totalPages}" keyword="${keyword}" display="3">
+                    <li class="page-item">
+                        <#if pagination.hasPrev>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.prevPageFullPath!}">上一页</a>
+                        </#if>
+                    </li>
+                    <li>
+                                    <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                                        ${posts.number + 1} / ${posts.totalPages}
+                                    </span>
+                    </li>
+
+                    <li class="page-item">
+                        <#if pagination.hasNext>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.nextPageFullPath!}">下一页</a>
+                        </#if>
+                    </li>
+                </@paginationTag>
+            </ul>
+        </nav>
+    </div>
+</#macro>
+  
+<#macro tagPostsnavigation>
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+        <nav aria-label="Page navigation">
+            <ul class="flex justify-between list-style-none space-x-3">
+                <@paginationTag method="tagPosts" slug="${tag.slug!}" page="${posts.number}" total="${posts.totalPages}" display="3">
+                    <li class="page-item">
+                        <#if pagination.hasPrev>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.prevPageFullPath!}">上一页</a>
+                        </#if>
+                    </li>
+                    <li>
+                                    <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                                        ${posts.number + 1} / ${posts.totalPages}
+                                    </span>
+                    </li>
+
+                    <li class="page-item">
+                        <#if pagination.hasNext>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.nextPageFullPath!}">下一页</a>
+                        </#if>
+                    </li>
+                </@paginationTag>
+            </ul>
+        </nav>
+    </div>
+</#macro>
+  
+<#macro categoryPostsnavigation>
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+        <nav aria-label="Page navigation">
+            <ul class="flex justify-between list-style-none space-x-3">
+                <@paginationTag method="categoryPosts" page="${posts.number}" slug="${category.slug!}" total="${posts.totalPages}" display="3">
+                    <li class="page-item">
+                        <#if pagination.hasPrev>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.prevPageFullPath!}">上一页</a>
+                        </#if>
+                    </li>
+                    <li>
+                                    <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                                        ${posts.number + 1} / ${posts.totalPages}
+                                    </span>
+                    </li>
+
+                    <li class="page-item">
+                        <#if pagination.hasNext>
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                               href="${pagination.nextPageFullPath!}">下一页</a>
+                        </#if>
+                    </li>
+                </@paginationTag>
+            </ul>
+        </nav>
+    </div>
+</#macro>
+  
 <#macro footer>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
