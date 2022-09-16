@@ -130,7 +130,7 @@
             </div>
         </#if>
     </header>
-    <header class="lg:hidden bg-white sticky top-0">
+    <header class="lg:hidden bg-white sticky top-0 z-50">
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
@@ -154,6 +154,18 @@
                         </li>
                     </#list>
                 </@menuTag>
+                <li>
+                    <div class="search flex justify-start text-767676 text-lg">
+                        <form method="get" action="/search" role="search" class="flex justify-start content-center mx-auto">
+                            <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-52"
+                                   type="search"
+                                   name="keyword" placeholder="Search" required>
+                            <button type="submit">
+                                <i class="ri-search-2-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -319,7 +331,7 @@
             <@linkTag method="listTeams">
                 <#list teams as team>
                     <ul>
-                        <#if team.team == "Home">
+                        <#if team.team == "${settings.link_disp!}">
                             <#list team.links as link>
                                 <li class="py-1 flex justify-start w-full space-x-1">
                                     <div class="truncate block">
