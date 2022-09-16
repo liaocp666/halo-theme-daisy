@@ -130,23 +130,12 @@
             </div>
         </#if>
     </header>
-    <header class="lg:hidden bg-white sticky top-0">
+    <header class="lg:hidden bg-white sticky top-0 z-50">
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
-                    <img src="${blog_logo!}" style="max-width:15%" alt="${blog_title!}">
+                    <img src="${blog_logo!}" alt="${blog_title!}">
                 </a>
-            </div>
-            <div class="search flex justify-start text-767676 text-lg space-x-3" style="left: -30%;
-    position: relative;">
-                <form method="get" action="/search" role="search" class="flex justify-start content-center">
-                    <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-full"
-                        type="search"
-                        name="keyword" placeholder="Search" required>
-                    <button type="submit">
-                        <i class="ri-search-2-line"></i>
-                    </button>
-                </form>
             </div>
             <div class="menu">
                 <a onclick="toggleNav()">
@@ -165,6 +154,18 @@
                         </li>
                     </#list>
                 </@menuTag>
+                <li>
+                    <div class="search flex justify-start text-767676 text-lg">
+                        <form method="get" action="/search" role="search" class="flex justify-start content-center mx-auto">
+                            <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-52"
+                                   type="search"
+                                   name="keyword" placeholder="Search" required>
+                            <button type="submit">
+                                <i class="ri-search-2-line"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
