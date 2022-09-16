@@ -171,11 +171,11 @@
     </header>
 </#macro>
 
-<#macro navigation>
+<#macro navigation method slug="" keyword="">
     <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
-                <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="3">
+                <@paginationTag method="${method}" page="${posts.number?c}" total="${posts.totalPages}" display="3" slug="${slug!}" keyword="${keyword!}">
                     <li class="page-item">
                         <#if pagination.hasPrev>
                             <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
@@ -183,11 +183,10 @@
                         </#if>
                     </li>
                     <li>
-                                    <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
-                                        ${posts.number + 1} / ${posts.totalPages}
-                                    </span>
+                        <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                            ${posts.number + 1} / ${posts.totalPages}
+                        </span>
                     </li>
-
                     <li class="page-item">
                         <#if pagination.hasNext>
                             <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"

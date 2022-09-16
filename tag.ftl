@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </#list>
-                <@navigation/>
+                <@navigation method="tagPosts" slug="${tag.slug!}"/>
             </div>
             <div class="sidebar lg:w-[27%] block overflow-hidden mb-12">
                 <div class="flex flex-col space-y-12">
