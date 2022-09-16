@@ -1,6 +1,10 @@
 site:
   label: 标题设置
   items:
+    link_disp:
+      name: link_disp
+      label: 显示的友链分组
+      type: text
     sub_title:
       name: 副标题
       label: 副标题

@@ -330,7 +330,7 @@
             <@linkTag method="listTeams">
                 <#list teams as team>
                     <ul>
-                        <#if team.team == "Home">
+                        <#if team.team == "${settings.link_disp!}">
                             <#list team.links as link>
                                 <li class="py-1 flex justify-start w-full space-x-1">
                                     <div class="truncate block">
