@@ -15,22 +15,40 @@
                         <div class="page-content bg-white p-8 text-767676 flex flex-col space-y-3">
                             <div class="page-meta text-[##767676] text-base flex justify-between">
                                 <div>
-                                    <span>${journal.createTime?string("yyyy-MM-dd")}</span>
+                                    <span>${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</span>
+                                </div>
+                                <div class="journal-comment">
+                                    <a class="flex space-x-2 block" title="评论一下">
+                                        <i class="ri-chat-2-line"></i>
+                                        <span>${journal.commentCount!}</span>
+                                    </a>
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
                             <div class="page-summary">
                                 <p>${journal.content!}</p>
                             </div>
-                        </div>
-                    </div>
+                               
+                        </div>  
+                        <div class="journal-comment-div bg-white p-8 hover:shadow-lg  mb-12" hidden>
+                            <halo-comment id="${journal.id}" type="journal" class="halo-comment-part"/>
+                        </div>                
+                    </div>          
                 </#list>
+                
             </div>
         </div>
     </div>
 </div>
 <@footer/>
+<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/2.6.10/vue.min.js"></script>
+<script src="${options.comment_internal_plugin_js!'https://www.unpkg.com/halo-comment-yu@latest/dist/halo-comment.min.js'}"></script>
 <script>
+$(".journal-comment").click(function(){
+    var that = $(this);
+    var ele = that.parents().children('.journal-comment-div');
+    ele.slideToggle();
+});
 </script>
 </body>
 </html>
