@@ -18,22 +18,21 @@
                                     <span>${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</span>
                                 </div>
                                 <div class="journal-comment">
-                                    <a class="flex space-x-2 block" title="评论一下">
+                                    <div class="flex space-x-2 block" title="评论一下">
                                         <i class="ri-chat-2-line"></i>
                                         <span>${journal.commentCount!}</span>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
                             <div class="page-summary">
                                 <p>${journal.content!}</p>
-                            </div>
-                               
+                            </div>                               
                         </div>  
                         <div class="journal-comment-div bg-white p-8 hover:shadow-lg  mb-12" hidden>
                             <halo-comment id="${journal.id}" type="journal" class="halo-comment-part"/>
                         </div>                
-                    </div>          
+                    </div>                    
                 </#list>
                 
             </div>
@@ -46,7 +45,7 @@
 <script>
 $(".journal-comment").click(function(){
     var that = $(this);
-    var ele = that.parent().children('.journal-comment-div');
+    var ele = that.parents('.page-item').children('.journal-comment-div');
     ele.slideToggle();
 });
 </script>
