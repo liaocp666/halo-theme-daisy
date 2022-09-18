@@ -46,7 +46,7 @@
 <script>
 $(".journal-comment").click(function(){
     var that = $(this);
-    var ele = that.parents().children('.journal-comment-div');
+    var ele = that.parent().children('.journal-comment-div');
     ele.slideToggle();
 });
 </script>
