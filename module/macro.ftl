@@ -135,7 +135,7 @@
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
-                    <img src="${blog_logo!}" alt="${blog_title!}">
+                    <img class="max-h-8" src="${blog_logo!}" alt="${blog_title!}">
                 </a>
             </div>
             <div class="menu">
