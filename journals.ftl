@@ -13,15 +13,15 @@
                 <#list journals.content as journal>
                     <div class="page-item hover:shadow-lg duration-300 mb-12">
                         <div class="page-content bg-white p-8 text-767676 flex flex-col space-y-3">
-                            <div class="page-meta text-[##767676] text-base flex justify-between">
+                            <div class="page-meta text-base flex justify-between">
                                 <div>
-                                    <span>${journal.createTime?string("yyyy-MM-dd HH:mm:ss")}</span>
+                                    <span>${journal.createTime?string("yyyy-MM-dd")}</span>
                                 </div>
                                 <div class="journal-comment">
-                                    <div class="flex space-x-2 block" title="评论一下">
-                                        <i class="ri-chat-2-line"></i>
-                                        <span>${journal.commentCount!}</span>
-                                    </div>
+                                    <a class="flex space-x-2 block cursor-pointer" title="评论一下">
+                                        <i class="text-767676 ri-chat-2-line"></i>
+                                        <span class="text-767676">${journal.commentCount!}</span>
+                                    </a>
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
