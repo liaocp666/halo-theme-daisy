@@ -204,8 +204,7 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
-    <script src="${theme_base!}/source/js/daisy.js"></script>
-    <@global.footer />
+    <script src="${theme_base!}/source/js/daisy.js" data-no-instant></script>
     <script>
         hljs.highlightAll();
         loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
@@ -239,6 +238,7 @@
         InstantClick.init()
     </script>
     </#if>
+    <@global.footer />
 </#macro>
 
 <#macro widgetRecentComments>
