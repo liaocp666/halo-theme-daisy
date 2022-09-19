@@ -47,11 +47,11 @@ sns:
       type: text
     wechat:
       name: wechat
-      label: 微信二维码
+      label: 微信
       type: text
     qq:
       name: qq
-      label: QQ二维码
+      label: QQ
       type: text
     bilibili:
       name: bilibili
