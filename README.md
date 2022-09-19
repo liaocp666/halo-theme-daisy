@@ -41,7 +41,7 @@ daisy 是一款简洁、大气的 halo 主题。不仅仅适用于个人博客�
 ## 安装
 
 1. 远程拉取：https://github.com/liaocp666/halo-theme-daisy 复制地址进去点击下载。
-2. 本地上传：在 [发布](https://github.com/liaocp666/halo-theme-daisy/releases) 页面，下载压缩包至本地，然后上传安装。
+2. 本地上传：在下载 [压缩包](https://github.com/liaocp666/halo-theme-daisy/archive/refs/heads/main.zip) 至本地，然后上传安装。
 
 ## 更新
 
