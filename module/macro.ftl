@@ -201,16 +201,23 @@
 </#macro>
 
 <#macro footer>
+    <#if settings.cursor_bg == 'open'>
+    <div class="mouse-cursor cursor-outer hidden lg:block" style="" data-no-instant></div>
+    <div class="mouse-cursor cursor-inner hidden lg:block" style="" data-no-instant></div>
+    </#if>
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/smoothscroll/1.4.10/SmoothScroll.min.js" type="application/javascript"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
-    <script src="${theme_base!}/source/js/daisy.js" data-no-instant></script>
+    <script src="${theme_base!}/source/js/daisy.js"></script>
     <script>
         hljs.highlightAll();
         loadHotPost(5, '${blog_url!}', '${settings.api_authorization!}')
         lightBox('.markdown-body img', 'post')
         generateCatalog()
+        <#if settings.cursor_bg == 'open'>
+        daisy_cursor()
+        </#if>
         var url = location.href;
         var urlstatus = false;
         $(".nav li a").each(function () {

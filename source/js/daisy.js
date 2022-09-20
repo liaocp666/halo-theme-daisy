@@ -23,9 +23,9 @@ function loadHotPost(size, blogUrl, api_authorization) {
     });
 }
 
-function lightBox (selector, gallery) {
-    $(selector).wrap(function(){
-        return '<a data-no-instant data-fancybox="'+ gallery +'" href="' + this.src + '" title="' + this.alt + '" data-caption="'+ this.alt +'"></a>';
+function lightBox(selector, gallery) {
+    $(selector).wrap(function () {
+        return '<a data-no-instant data-fancybox="' + gallery + '" href="' + this.src + '" title="' + this.alt + '" data-caption="' + this.alt + '"></a>';
     })
     Fancybox.bind("[data-fancybox]", {
         infinite: false,
@@ -33,7 +33,7 @@ function lightBox (selector, gallery) {
     });
 }
 
-function toggleNav () {
+function toggleNav() {
     $('#mobileNav').slideToggle(500)
 }
 
@@ -49,7 +49,7 @@ function generateCatalog() {
     if (!content || content.length === 0) {
         $('#catalog-widget').remove()
     }
-    content.each(function(){
+    content.each(function () {
         const level = this.tagName.replace('H', '')
         const title = $(this).text()
         if (lastLevel === 0) {
@@ -64,15 +64,33 @@ function generateCatalog() {
         }
         lastLevel = level
         $(this).attr('id', title)
-        catalog.append('<li style="padding-left: '+ lastLeftPx +'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black" title="'+ title +'" href="'+ url + title +'">' + title + '</a></li>')
+        catalog.append('<li style="padding-left: ' + lastLeftPx + 'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black" title="' + title + '" href="' + url + title + '">' + title + '</a></li>')
     });
 }
 
 function removeCommentCopyright() {
     var comment = document.querySelector('.halo-comment-part')
     if (comment) {
-        var style = document.createElement( 'style' )
+        var style = document.createElement('style')
         style.innerHTML = '.edition { display: none }'
         comment.shadowRoot.append(style)
     }
+}
+
+function daisy_cursor() {
+    const e = document.querySelector(".cursor-inner"),
+            t = document.querySelector(".cursor-outer");
+    e.style.visibility = "visible"
+    t.style.visibility = "visible"
+    window.onmousemove = function (s) {
+        t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"
+        e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"
+    }
+    $("body").on("mouseenter", "a", function () {
+        e.classList.add("cursor-hover")
+        t.classList.add("cursor-hover")
+    })
+    $("body").on("mouseleave", "a, .cursor-pointer", function () {
+        $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
+    })
 }

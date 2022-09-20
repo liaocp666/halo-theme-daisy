@@ -91,6 +91,19 @@ theme:
           label: 'Mi Sans'
         - value: 'system'
           label: '系统字体'
+    cursor_bg:
+      name: cursor_bg
+      label: 光标背景
+      type: radio
+      default: close
+      options:
+        - value: open
+          label: 开
+        - value: close
+          label: 关
+beian:
+  label: 备案设置
+  items:
     icp_beian:
       name: icp_beian
       label: ICP 备案号
