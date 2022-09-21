@@ -97,7 +97,7 @@ theme:
       name: cursor_bg
       label: 光标背景
       type: radio
-      default: close
+      default: open
       options:
         - value: open
           label: 开
