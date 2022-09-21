@@ -300,7 +300,7 @@
 </#macro>
 
 <#macro widgetHotPost>
-    <#if settings.api_authorization?? && api_authorization != "">
+    <#if settings.api_authorization?? && settings.api_authorization != "">
         <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
             <div class="widget-title text-black font-bold mb-2">
                 <p>热门文章</p>
