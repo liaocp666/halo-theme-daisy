@@ -88,7 +88,7 @@
     <header class="hidden fixed w-[330px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
-                <img src="${blog_logo!}" alt="${blog_title!}">
+                <img src="${blog_logo!}" alt="${blog_title!}" class="max-h-20">
             </a>
         </div>
         <div class="nav">
