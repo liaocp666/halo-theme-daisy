@@ -300,18 +300,20 @@
 </#macro>
 
 <#macro widgetHotPost>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
-        <div class="widget-title text-black font-bold mb-2">
-            <p>热门文章</p>
+    <#if settings.api_authorization??>
+        <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
+            <div class="widget-title text-black font-bold mb-2">
+                <p>热门文章</p>
+            </div>
+            <div class="widget-hr border-b border-gray-300 w-full mb-4">
+            </div>
+            <div class="widget-content text-767676">
+                <ul id="hotPosts">
+                    <li class="text-center">Loading……</li>
+                </ul>
+            </div>
         </div>
-        <div class="widget-hr border-b border-gray-300 w-full mb-4">
-        </div>
-        <div class="widget-content text-767676">
-            <ul id="hotPosts">
-                <li class="text-center">Loading……</li>
-            </ul>
-        </div>
-    </div>
+    </#if>
 </#macro>
 
 <#macro widgetNewPost>
