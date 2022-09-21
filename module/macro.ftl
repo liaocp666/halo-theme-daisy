@@ -55,6 +55,14 @@
             }
         </style>
         </#if>
+        <#if settings.font == 'HarmonyOS-Sans'>
+            <link rel="stylesheet" href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" as="style">
+            <style>
+                html {
+                    font-family: 'HarmonyOS_Regular', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                }
+            </style>
+        </#if>
         <#if settings.font == 'system'>
             <style>
                 @font-face {

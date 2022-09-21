@@ -89,6 +89,8 @@ theme:
           label: 'OPPO Sans'
         - value: 'Mi-Sans'
           label: 'Mi Sans'
+        - value: 'HarmonyOS-Sans'
+          label: 'HarmonyOS Sans'
         - value: 'system'
           label: '系统字体'
     cursor_bg:
