@@ -28,7 +28,7 @@ daisy 是一款简洁、大气的 halo 主题。不仅仅适用于个人博客�
 ### 外观设置
 
 * 默认开启局部刷新
-* 切换字体：OPPO Sans、Mi Sans、System
+* 切换字体：OPPO Sans、Mi Sans、HarmonyOS Sans、System
 * 光标背景：开启后灰色背景将跟随光标移动
 
 ### 备案设置
