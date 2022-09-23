@@ -23,12 +23,13 @@
             <link rel="icon" type="image/png" sizes="16x16" href="${options.blog_favicon}">
             <link rel="manifest" href="${options.blog_favicon}">
         </#if>
-        <link href="${theme_base!}/source/css/style.css" rel="stylesheet">
         <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"></noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
         <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/github.min.css" type="text/css" rel="stylesheet" />
         <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.12.0/katex.min.css" type="text/css" rel="stylesheet" />
+        <link href="${theme_base!}/source/css/style.css" rel="stylesheet">
+        <link href="${theme_base!}/source/css/github-markdown-light.css" rel="stylesheet"/>
         <#if settings.font == 'oppo-sans'>
             <style>
                 @font-face {
