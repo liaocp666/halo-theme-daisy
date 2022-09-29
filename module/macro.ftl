@@ -114,7 +114,7 @@
                 </button>
             </form>
         </div>
-        <div class="copyright text-767676">
+        <div class="copyright text-767676 text-xs">
             <p>
                 © ${.now?string("yyyy")} <a class="text-black" href="${blog_url!}">${blog_title!}</a>
             </p>
