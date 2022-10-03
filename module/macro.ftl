@@ -115,7 +115,7 @@
         </div>
         <div class="copyright text-767676 dark-text-[#999]">
             <p>
-                © ${.now?string("yyyy")} <a class="text-black dark:text-white" href="${blog_url!}">${blog_title!}</a>&nbsp;<a href=""><i class="ri-sun-line"></i></a>
+                © ${.now?string("yyyy")} <a class="text-black dark:text-white" href="${blog_url!}">${blog_title!}</a>
             </p>
             <p>
                 Powered by <a href="https://halo.run/" target="_blank" class="text-black dark:text-white">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black dark:text-white">Daisy</a>
