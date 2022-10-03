@@ -103,10 +103,9 @@ function toggleDarkMode() {
     var dark = window.localStorage.getItem('dark')
     if (!dark) {
         dark = 0
-        window.localStorage.setItem('dark', dark)
-        return
+    } else {
+        dark = dark == 1 ? 0 : 1
     }
-    dark = dark == 1 ? 0 : 1
     window.localStorage.setItem('dark', dark)
     darkMode()
 }
