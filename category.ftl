@@ -21,7 +21,7 @@
                                 </a>
                             </div>
                         </#if>
-                        <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
+                        <div class="page-content bg-white dark:bg-neutral-900 p-4 lg:p-8 text-767676 flex flex-col space-y-3">
                             <div class="page-meta text-base flex justify-between">
                                 <div>
                                     <#list post.categories as categorie>
@@ -49,7 +49,7 @@
                                     <h2 class="text-2xl font-semibold">${post.title!}</h2>
                                 </a>
                             </div>
-                            <div class="page-summary">
+                            <div class="page-summary dark:text-[#999]">
                                 <p>${post.summary!}</p>
                             </div>
                         </div>
