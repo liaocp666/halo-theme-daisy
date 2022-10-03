@@ -139,20 +139,26 @@
             </div>
         </#if>
     </header>
-    <header class="lg:hidden bg-white sticky top-0 z-50">
+    <header class="lg:hidden bg-white sticky top-0 z-50 dark:bg-neutral-900">
         <div class="flex justify-between p-4">
             <div class="logo">
                 <a href="${blog_url!}" title="${blog_title!}">
                     <img class="max-h-8" src="${blog_logo!}" alt="${blog_title!}">
                 </a>
             </div>
-            <div class="menu">
-                <a onclick="toggleNav()">
+            <div class="menu dark:text-[#999] space-x-3">
+                <button class="hover:text-black dark:hover:text-white" onclick="toggleDarkMode()">
+                    <i class="ri-contrast-2-line" id="darkModelIcon"></i>
+                </button>
+                <button class="hover:text-black dark:hover:text-white" onclick="toggleSearch()">
+                    <i class="ri-search-2-line"></i>
+                </button>
+                <button onclick="toggleNav()">
                     <i class="ri-menu-3-line"></i>
-                </a>
+                </button>
             </div>
         </div>
-        <div class="mobile-nav right-0 bg-white h-full w-full" id="mobileNav" style="display: none">
+        <div class="mobile-nav right-0 bg-white h-full w-full dark:bg-neutral-900" id="mobileNav" style="display: none">
             <ul class="text-767676 space-y-6 py-6">
                 <@menuTag method="list">
                     <#list menus?sort_by('priority') as menu>
@@ -163,31 +169,19 @@
                         </li>
                     </#list>
                 </@menuTag>
-                <li>
-                    <div class="search flex justify-start text-767676 text-lg">
-                        <form method="get" action="/search" role="search" class="flex justify-start content-center mx-auto">
-                            <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-52"
-                                   type="search"
-                                   name="keyword" placeholder="Search" required>
-                            <button type="submit">
-                                <i class="ri-search-2-line"></i>
-                            </button>
-                        </form>
-                    </div>
-                </li>
             </ul>
         </div>
     </header>
-    <div id="search" style="display: none" class="fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto bg-white z-50 flex justify-center content-center items-center">
+    <div id="search" style="display: none" class="fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto bg-white dark:bg-neutral-900 z-50 flex justify-center content-center items-center">
         <div class="absolute right-2 top-2">
-            <button class="text-3xl text-767676 cursor-pointer hover:text-black" onclick="toggleSearch()"><i class="ri-close-circle-line"></i></button>
+            <button class="text-3xl text-767676 cursor-pointer hover:text-black dark:text-[#999] dark:hover:text-white" onclick="toggleSearch()"><i class="ri-close-circle-line"></i></button>
         </div>
         <div class="search-wrap">
             <form method="get" action="/search" role="search" class="flex justify-start content-center">
                 <input autocomplete="off" class="border-b border-stone-300 dark:border-[#999] focus:outline-none focus:border-b w-full bg-transparent"
                        type="search"
                        name="keyword" placeholder="Search" required>
-                <button type="submit">
+                <button type="submit" class="dark:text-[#999] dark:hover:text-white">
                     <i class="ri-search-2-line"></i>
                 </button>
             </form>
