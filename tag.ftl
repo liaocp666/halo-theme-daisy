@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
-                            <div class="title text-black">
+                            <div class="title text-black dark:text-white">
                                 <a href="${post.fullPath!}" title="${post.title!}">
                                     <h2 class="text-2xl font-semibold">${post.title!}</h2>
                                 </a>
