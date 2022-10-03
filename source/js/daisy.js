@@ -118,7 +118,7 @@ function darkMode () {
     var comment = document.getElementsByTagName("halo-comment")
     if (dark == 1) {
         $('html').addClass('dark')
-        if (!comment) {
+        if (comment) {
             var haloComment = comment[0].shadowRoot.getElementById("halo-comment")
             $(haloComment).addClass('dark')
             $(haloComment).removeClass('light')
@@ -126,10 +126,10 @@ function darkMode () {
     }
     if (dark == 0) {
         $('html').removeClass('dark')
-        if (!comment) {
+        if (comment) {
             var haloComment = comment[0].shadowRoot.getElementById("halo-comment")
-            $(haloComment).addClass('dark')
-            $(haloComment).removeClass('light')
+            $(haloComment).removeClass('dark')
+            $(haloComment).addClass('light')
         }
     }
 }
