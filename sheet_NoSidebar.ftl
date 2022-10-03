@@ -1,17 +1,17 @@
 <#include "module/macro.ftl"/>
 <@head title="${sheet.title!} - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]">
+<body class="bg-[#f9f9f9] dark:bg-neutral-800">
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[330px] w-full">
         <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px]">
-            <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0" id="fillTitle">${sheet.title!}</h1>
+            <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0 dark:text-white" id="fillTitle">${sheet.title!}</h1>
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
             <div class="page-content w-full block overflow-hidden">
                 <div class="page-item hover:shadow-lg duration-300 mb-12">
-                    <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
+                    <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3 dark:bg-neutral-900">
                         <div class="page-meta text-[##767676] text-base flex justify-between">
                             <div class="">
                                 <span>

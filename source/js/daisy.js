@@ -16,7 +16,7 @@ function loadHotPost(size, blogUrl, api_authorization) {
             $("#hotPosts").empty()
             $(result.data.content).each((index, item) => {
                 $("#hotPosts").append(
-                        '<li class="py-1 w-full flex justify-start space-x-1"><div class="truncate block"><i class="ri-arrow-right-s-fill"></i><a href="' + item.fullPath + '" class="hover:text-black" title="' + item.title + '">' + item.title + '</a></div></li>'
+                        '<li class="py-1 w-full flex justify-start space-x-1"><div class="truncate block"><i class="ri-arrow-right-s-fill"></i><a href="' + item.fullPath + '" class="hover:text-black dark:hover:text-white" title="' + item.title + '">' + item.title + '</a></div></li>'
                 )
             })
         }
@@ -64,7 +64,7 @@ function generateCatalog() {
         }
         lastLevel = level
         $(this).attr('id', title)
-        catalog.append('<li style="padding-left: ' + lastLeftPx + 'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block hover:text-black" title="' + title + '" href="' + url + title + '">' + title + '</a></li>')
+        catalog.append('<li style="padding-left: ' + lastLeftPx + 'px" class="py-1 flex justify-start w-full space-x-1"><a class="truncate block dark:hover:text-white" title="' + title + '" href="' + url + title + '">' + title + '</a></li>')
     });
 }
 
@@ -94,3 +94,42 @@ function daisy_cursor() {
         $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
     })
 }
+
+function toggleSearch() {
+    $('#search').toggle('.2')
+}
+
+function toggleDarkMode() {
+    var dark = window.localStorage.getItem('dark')
+    if (!dark) {
+        dark = 1
+        window.localStorage.setItem('dark', dark)
+        return
+    }
+    dark = dark == 1 ? 0 : 1
+    window.localStorage.setItem('dark', dark)
+    darkMode()
+}
+
+function darkMode () {
+    var dark = window.localStorage.getItem('dark')
+    var comment = document.getElementsByTagName("halo-comment")
+    if (dark == 1) {
+        $('html').addClass('dark')
+        if (!comment) {
+            var haloComment = comment[0].shadowRoot.getElementById("halo-comment")
+            $(haloComment).addClass('dark')
+            $(haloComment).removeClass('light')
+        }
+    }
+    if (dark == 0) {
+        $('html').removeClass('dark')
+        if (!comment) {
+            var haloComment = comment[0].shadowRoot.getElementById("halo-comment")
+            $(haloComment).addClass('dark')
+            $(haloComment).removeClass('light')
+        }
+    }
+}
+
+darkMode()

@@ -1,12 +1,12 @@
 <#include "module/macro.ftl"/>
 <@head title="${settings.archives_title} - ${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]">
+<body class="bg-[#f9f9f9] dark:bg-neutral-800">
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="flex flex-col lg:pl-[330px] w-full">
         <div class="page-title my-20 mx-auto lg:page-mqx-width w-full lg:px-[40px]">
-            <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0"
+            <h1 class="text-4xl font-black subpixel-antialiased pl-4 lg:pl-0 dark:text-white"
                 id="fillTitle">${settings.archives_title}</h1>
         </div>
         <div class="flex flex-col lg:flex-row w-full mx-auto lg:page-mqx-width lg:space-x-8 lg:px-[40px]">
@@ -21,7 +21,7 @@
                                 </a>
                             </div>
                         </#if>
-                        <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
+                        <div class="page-content bg-white dark:bg-neutral-900 p-4 lg:p-8 text-767676 flex flex-col space-y-3">
                             <div class="page-meta text-[##767676] text-base flex justify-between">
                                 <div>
                                     <#list post.categories as categorie>
@@ -44,12 +44,12 @@
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
-                            <div class="title text-black">
+                            <div class="title text-black dark:text-white">
                                 <a href="${post.fullPath!}" title="${post.title!}">
                                     <h2 class="text-2xl font-semibold">${post.title!}</h2>
                                 </a>
                             </div>
-                            <div class="page-summary">
+                            <div class="page-summary dark:text-[#999]">
                                 <p>${post.summary!}</p>
                             </div>
                         </div>

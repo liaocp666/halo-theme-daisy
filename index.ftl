@@ -1,7 +1,7 @@
 <#include "module/macro.ftl"/>
 <@head title="${blog_title!}"/>
 
-<body class="bg-[#f9f9f9]">
+<body class="bg-[#f9f9f9] dark:bg-neutral-800">
 <div class="flex flex-col lg:flex-row">
     <@header/>
     <div class="w-full h-screen lg:pl-[330px] px-[40px] lg:px-0 mt-[-60px] lg:mt-0">
@@ -13,12 +13,12 @@
                 </div>
                 <div class="resume space-y-6">
                     <div class="name text-center lg:text-left">
-                        <h1 class="text-6xl subpixel-antialiased font-black font-sans">${user.nickname!}</h1>
+                        <h1 class="text-6xl subpixel-antialiased font-black font-sans dark:text-white">${user.nickname!}</h1>
                     </div>
                     <div class="info text-center lg:text-left">
                         <p class="text-767676">${user.description!}</p>
                     </div>
-                    <div class="social hidden lg:block">
+                    <div class="social hidden lg:block dark:text-767676">
                         <ul class="flex space-x-4">
                             <#if settings.github?? && settings.github != ''>
                                 <li>

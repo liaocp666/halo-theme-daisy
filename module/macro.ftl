@@ -30,6 +30,7 @@
         <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.12.0/katex.min.css" type="text/css" rel="stylesheet" />
         <link href="${theme_base!}/source/css/style.css" rel="stylesheet">
         <link href="${theme_base!}/source/css/github-markdown-light.css" rel="stylesheet"/>
+        <link href="${theme_base!}/source/css/github-markdown-dark.css" rel="stylesheet"/>
         <#if settings.font == 'oppo-sans'>
             <style>
                 @font-face {
@@ -86,40 +87,38 @@
 </#macro>
 
 <#macro header>
-    <header class="hidden fixed w-[330px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white">
+    <header class="hidden fixed w-[330px] px-16 h-screen space-y-16 lg:flex flex-col justify-center content-start bg-white dark:bg-neutral-900">
         <div class="logo">
             <a href="${blog_url!}" title="${blog_title!}">
                 <img src="${blog_logo!}" alt="${blog_title!}" class="max-h-20">
             </a>
         </div>
         <div class="nav">
-            <ul class="text-767676 space-y-2">
+            <ul class="text-767676 dark:text-[#999] space-y-2">
                 <@menuTag method="list">
                     <#list menus?sort_by('priority') as menu>
                         <li>
-                            <a class="hover:text-black block w-full hover:tracking-wider duration-300"
+                            <a class="hover:text-black dark:hover:text-white block w-full hover:tracking-wider duration-300"
                                href="${menu.url!}">${menu.name!} </a>
                         </li>
                     </#list>
                 </@menuTag>
             </ul>
         </div>
-        <div class="search flex justify-start text-767676 text-lg space-x-3">
-            <form method="get" action="/search" role="search" class="flex justify-start content-center">
-                <input autocomplete="off" class="border-b border-stone-300 focus:outline-none focus:border-b w-full"
-                       type="search"
-                       name="keyword" placeholder="Search" required>
-                <button type="submit">
-                    <i class="ri-search-2-line"></i>
-                </button>
-            </form>
+        <div class="flex justify-start text-767676 dark:text-[#999] text-lg space-x-3" data-no-instant>
+            <button class="hover:text-black dark:hover:text-white" onclick="toggleDarkMode()">
+                <i class="ri-contrast-2-line" id="darkModelIcon"></i>
+            </button>
+            <button class="hover:text-black dark:hover:text-white" onclick="toggleSearch()">
+                <i class="ri-search-2-line"></i>
+            </button>
         </div>
-        <div class="copyright text-767676">
+        <div class="copyright text-767676 dark-text-[#999]">
             <p>
-                © ${.now?string("yyyy")} <a class="text-black" href="${blog_url!}">${blog_title!}</a>
+                © ${.now?string("yyyy")} <a class="text-black dark:text-white" href="${blog_url!}">${blog_title!}</a>&nbsp;<a href=""><i class="ri-sun-line"></i></a>
             </p>
             <p>
-                Powered by <a href="https://halo.run/" target="_blank" class="text-black">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black">Daisy</a>
+                Powered by <a href="https://halo.run/" target="_blank" class="text-black dark:text-white">Halo</a>&nbsp;&&nbsp;<a href="https://github.com/liaocp666/halo-theme-daisy" target="_blank" class="text-black dark:text-white">Daisy</a>
             </p>
         </div>
         <#if settings.icp_beian?? || settings.ga_beian_content??>
@@ -179,27 +178,42 @@
             </ul>
         </div>
     </header>
+    <div id="search" style="display: none" class="fixed top-0 left-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto bg-white z-50 flex justify-center content-center items-center">
+        <div class="absolute right-2 top-2">
+            <button class="text-3xl text-767676 cursor-pointer hover:text-black" onclick="toggleSearch()"><i class="ri-close-circle-line"></i></button>
+        </div>
+        <div class="search-wrap">
+            <form method="get" action="/search" role="search" class="flex justify-start content-center">
+                <input autocomplete="off" class="border-b border-stone-300 dark:border-[#999] focus:outline-none focus:border-b w-full bg-transparent"
+                       type="search"
+                       name="keyword" placeholder="Search" required>
+                <button type="submit">
+                    <i class="ri-search-2-line"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 </#macro>
 
 <#macro navigation method slug="" keyword="">
-    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12">
+    <div class="bg-white p-4 hover:shadow-lg duration-300 mb-12 dark:bg-neutral-900">
         <nav aria-label="Page navigation">
             <ul class="flex justify-between list-style-none space-x-3">
                 <@paginationTag method="${method}" page="${posts.number?c}" total="${posts.totalPages}" display="3" slug="${slug!}" keyword="${keyword!}">
                     <li class="page-item">
                         <#if pagination.hasPrev>
-                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 dark:text-[#999] hover:bg-gray-200 focus:shadow-none"
                                href="${pagination.prevPageFullPath!}">上一页</a>
                         </#if>
                     </li>
                     <li>
-                        <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 text-gray-800 bg-gray-200 shadow-none">
+                        <span class="page-link relative block py-1.5 px-3 rounded border-0 outline-none transition-all duration-300 rounded text-gray-800 dark:text-[#999] bg-gray-200 shadow-none">
                             ${posts.number + 1} / ${posts.totalPages}
                         </span>
                     </li>
                     <li class="page-item">
                         <#if pagination.hasNext>
-                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+                            <a class="page-link relative block py-1.5 px-3 rounded border-0 bg-transparent outline-none transition-all duration-300 rounded text-gray-800 dark:text-[#999] hover:bg-gray-200 focus:shadow-none"
                                href="${pagination.nextPageFullPath!}">下一页</a>
                         </#if>
                     </li>
@@ -231,14 +245,14 @@
         var urlstatus = false;
         $(".nav li a").each(function () {
             if ((url + '/').indexOf($(this).attr('href').replace('.html', '')) > -1 && $(this).attr('href').replace('.html', '') != '/') {
-                $(this).addClass('text-black font-semibold tracking-wide');
+                $(this).addClass('text-black dark:text-white font-semibold tracking-wide');
                 urlstatus = true;
             } else {
-                $(this).removeClass('text-black font-semibold tracking-wide');
+                $(this).removeClass('text-black dark:text-white font-semibold tracking-wide');
             }
         });
         if (!urlstatus) {
-            $(".nav li a").eq(0).addClass('text-black font-semibold tracking-wide');
+            $(".nav li a").eq(0).addClass('text-black dark:text-white font-semibold tracking-wide');
         }
     </script>
     <#if settings.init_click == 'open'>
@@ -259,20 +273,20 @@
 </#macro>
 
 <#macro widgetRecentComments>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
-        <div class="widget-title text-black font-bold mb-2">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300 dark:bg-neutral-900">
+        <div class="widget-title text-black font-bold mb-2 dark:text-[#999]">
             <p>最新评论</p>
         </div>
         <div class="widget-hr border-b border-gray-300 w-full mb-4">
         </div>
-        <div class="widget-content text-767676">
+        <div class="widget-content text-767676 dark:text-[#999]">
             <@commentTag method="latest" top="5">
                 <ul>
                     <#list comments.content as comment>
                         <li class="py-1 flex justify-start w-full space-x-1">
                             <div class="truncate block">
                                 <i class="ri-arrow-right-s-fill"></i>
-                                <a class="hover:text-black"
+                                <a class="hover:text-black dark:hover:text-white"
                                    title="${comment.content!}"
                                    href="${comment.post.fullPath!}#comment">${comment.author!}
                                     ：${comment.content!}</a>
@@ -286,13 +300,13 @@
 </#macro>
 
 <#macro widgetCatalog>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300" id="catalog-widget">
-        <div class="widget-title text-black font-bold mb-2">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300 dark:bg-neutral-900" id="catalog-widget">
+        <div class="widget-title text-black font-bold mb-2 dark:text-[#999]">
             <p>文章目录</p>
         </div>
         <div class="widget-hr border-b border-gray-300 w-full mb-4">
         </div>
-        <div class="widget-content text-767676">
+        <div class="widget-content text-767676 dark:text-[#999]">
             <ul id="catalog">
 
             </ul>
@@ -302,13 +316,13 @@
 
 <#macro widgetHotPost>
     <#if settings.api_authorization?? && settings.api_authorization != "">
-        <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
-            <div class="widget-title text-black font-bold mb-2">
+        <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300 dark:bg-neutral-900">
+            <div class="widget-title text-black font-bold mb-2 dark:text-[#999]">
                 <p>热门文章</p>
             </div>
             <div class="widget-hr border-b border-gray-300 w-full mb-4">
             </div>
-            <div class="widget-content text-767676">
+            <div class="widget-content text-767676 dark:text-[#999]">
                 <ul id="hotPosts">
                     <li class="text-center">Loading……</li>
                 </ul>
@@ -318,19 +332,19 @@
 </#macro>
 
 <#macro widgetNewPost>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
-        <div class="widget-title text-black font-bold mb-2">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300 dark:bg-neutral-900">
+        <div class="widget-title text-black font-bold mb-2 dark:text-[#999]">
             <p>最新文章</p>
         </div>
         <div class="widget-hr border-b border-gray-300 w-full mb-4">
         </div>
-        <div class="widget-content text-767676">
+        <div class="widget-content text-767676 dark:text-[#999]">
             <ul id="newPosts">
                 <@postTag method="latest" top="5">
                     <#list posts as post>
                         <li class="py-1 w-full flex justify-start space-x-1">
                             <i class="ri-arrow-right-s-fill"></i>
-                            <a href="${post.fullPath!}">${post.title!}</a>
+                            <a href="${post.fullPath!}" class="dark:hover:text-white">${post.title!}</a>
                         </li>
                     </#list>
                 </@postTag>
@@ -340,13 +354,13 @@
 </#macro>
 
 <#macro widgetLinks>
-    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300">
-        <div class="widget-title text-black font-bold mb-2">
+    <div class="widget bg-white w-full p-8 hover:shadow-lg duration-300 dark:bg-neutral-900">
+        <div class="widget-title text-black font-bold mb-2 dark:text-[#999]">
             <p>友情连接</p>
         </div>
         <div class="widget-hr border-b border-gray-300 w-full mb-4">
         </div>
-        <div class="widget-content text-767676">
+        <div class="widget-content text-767676 dark:text-[#999]">
             <@linkTag method="listTeams">
                 <#list teams as team>
                     <ul>
@@ -355,7 +369,7 @@
                                 <li class="py-1 flex justify-start w-full space-x-1">
                                     <div class="truncate block">
                                         <i class="ri-arrow-right-s-fill"></i>
-                                        <a class="hover:text-black" href="${link.url!}"
+                                        <a class="hover:text-black dark:hover:text-white" href="${link.url!}"
                                            target="_blank">${link.name!}</a>
                                     </div>
                                 </li>
