@@ -102,7 +102,7 @@ function toggleSearch() {
 function toggleDarkMode() {
     var dark = window.localStorage.getItem('dark')
     if (!dark) {
-        dark = 1
+        dark = 0
         window.localStorage.setItem('dark', dark)
         return
     }
@@ -113,6 +113,9 @@ function toggleDarkMode() {
 
 function darkMode () {
     var dark = window.localStorage.getItem('dark')
+    if (!dark) {
+        return
+    }
     var comment = document.getElementsByTagName("halo-comment")
     if (dark == 1) {
         $('html').addClass('dark')
