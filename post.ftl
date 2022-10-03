@@ -42,7 +42,7 @@
                             <div class="pt-4 w-full flex justify-start space-x-3">
                                 <i class="ri-price-tag-3-line"></i>
                                 <#list tags as tag>
-                                    <a href="${tag.fullPath!}" class="hover:text-black">${tag.name!}</a>
+                                    <a href="${tag.fullPath!}" class="hover:text-black dark:hover:text-white">${tag.name!}</a>
                                 </#list>
                             </div>
                         </div>
