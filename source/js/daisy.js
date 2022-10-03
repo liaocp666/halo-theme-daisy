@@ -102,7 +102,7 @@ function toggleSearch() {
 function toggleDarkMode() {
     var dark = window.localStorage.getItem('dark')
     if (!dark) {
-        dark = 0
+        dark = 1
     } else {
         dark = dark == 1 ? 0 : 1
     }
