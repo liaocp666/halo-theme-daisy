@@ -29,7 +29,7 @@ daisy 是一款简洁、大气的 halo 主题。不仅仅适用于个人博客�
 ### 网站设置
 
 * 设置网站副标题，以及其他独立页面的标题。此处使用默认也可以。
-* Access key，填入上方 api 服务的 Access key 。
+* Access key，填入上方 api 服务的 Access key 。**注意：** 如果 Access key 为空，侧边栏将不显示热门文章
 
 ### 社交资料
 
