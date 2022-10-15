@@ -21,7 +21,7 @@
                                 </a>
                             </div>
                         </#if>
-                        <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3">
+                        <div class="page-content bg-white p-4 lg:p-8 text-767676 flex flex-col space-y-3 dark:bg-neutral-900">
                             <div class="page-meta text-[##767676] text-base flex justify-between">
                                 <div>
                                     <#list post.categories as categorie>
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="border-b border-gray-300 w-full"></div>
-                            <div class="title text-black">
+                            <div class="title text-black dark:text-white">
                                 <a href="${post.fullPath!}" title="${post.title!}">
                                     <h2 class="text-2xl font-semibold">${post.title!}</h2>
                                 </a>
