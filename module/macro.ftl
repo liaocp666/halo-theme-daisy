@@ -23,9 +23,9 @@
             <link rel="icon" type="image/png" sizes="16x16" href="${options.blog_favicon}">
             <link rel="manifest" href="${options.blog_favicon}">
         </#if>
-        <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"></noscript>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+        <link rel="preload" href="https://www.unpkg.com/remixicon@2.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://www.unpkg.com/remixicon@2.5.0/fonts/remixicon.css"></noscript>
+        <link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css"/>
         <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/github.min.css" type="text/css" rel="stylesheet" />
         <link href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.12.0/katex.min.css" type="text/css" rel="stylesheet" />
         <link href="${theme_base!}/source/css/style.css" rel="stylesheet">
@@ -224,7 +224,7 @@
     </#if>
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/smoothscroll/1.4.10/SmoothScroll.min.js" type="application/javascript"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js" type="application/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js" type="application/javascript"></script>
     <script src="${theme_base!}/source/js/daisy.js"></script>
     <script>
