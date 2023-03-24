@@ -1,8 +1,8 @@
 {
-  "name": "@halo-dev/theme-modern-starter",
+  "name": "theme-daisy",
   "private": true,
-  "version": "0.0.0",
-  "description": "A development starter theme with modern front-end technology stack for Halo",
+  "version": "2.0.0",
+  "description": "大气、简洁、个人博客的 halo 主题",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
@@ -11,11 +11,12 @@
   },
   "keywords": [
     "halo",
-    "halo-theme"
+    "halo-theme",
+    "theme-daisy"
   ],
-  "homepage": "https://github.com/halo-dev/theme-modern-starter#readme",
+  "homepage": "https://github.com/liaocp666/halo-theme-daisy#readme",
   "bugs": {
-    "url": "https://github.com/halo-dev/theme-modern-starter/issues"
+    "url": "https://github.com/liaocp666/halo-theme-daisy/issues"
   },
   "author": {
     "name": "Halo OSS Organization",
@@ -24,14 +25,13 @@
   },
   "maintainers": [
     {
-      "name": "Ryan Wang",
-      "url": "https://github.com/ruibaby",
-      "email": "i@ryanc.cc"
+      "name": "Kent Liao",
+      "url": "https://github.com/liaocp666"
     }
   ],
   "license": "GPL-3.0",
   "repository": {
-    "url": "https://github.com/halo-dev/theme-modern-starter",
+    "url": "https://github.com/liaocp666/halo-theme-daisy",
     "type": "git"
   },
   "devDependencies": {
