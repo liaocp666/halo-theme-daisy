@@ -1,0 +1,17 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-daisy
+spec:
+  displayName: Daisy
+  author:
+    name: Kent Liao
+    website: https://www.kokoo.top/
+  description: A development starter theme with Vite Ecosystem for Halo
+  logo: https://halo.run/logo
+  website: https://github.com/halo-dev/theme-modern-starter
+  repo: https://github.com/halo-dev/theme-modern-starter.git
+  settingName: "theme-daisy-setting"
+  configMapName: "theme-daisy-configMap"
+  version: 1.0.0
+  require: 2.0.0
