@@ -7,10 +7,10 @@ spec:
   author:
     name: Kent Liao
     website: https://www.kokoo.top/
-  description: A development starter theme with Vite Ecosystem for Halo
+  description: 大气、简洁、个人博客的 halo 主题
   logo: https://halo.run/logo
-  website: https://github.com/halo-dev/theme-modern-starter
-  repo: https://github.com/halo-dev/theme-modern-starter.git
+  website: https://github.com/liaocp666/halo-theme-daisy
+  repo: https://github.com/liaocp666/halo-theme-daisy.git
   settingName: "theme-daisy-setting"
   configMapName: "theme-daisy-configMap"
   version: 1.0.0
